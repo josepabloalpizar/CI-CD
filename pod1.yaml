@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx
   labels:
     app: nginx
 spec:
@@ -16,6 +16,9 @@ spec:
     spec:
       containers:
       - name: nginx
+        env:
+          - name: VAR1
+            value: "hola" 
         resources:
             limits:
               cpu: 100m
